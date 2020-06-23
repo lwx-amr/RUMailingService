@@ -12,5 +12,9 @@ module.exports = {
     },
     database: {
         url: process.env.DB_URL || "mongodb+srv://rankup:rank1998@cluster0-9enme.mongodb.net/RUMails?retryWrites=true&w=majority",
+    }, 
+    cred : {
+        user: 'rankup9822@yahoo.com',
+        pass: 'mpvyeqpdvqlmwncq'
     }
 };

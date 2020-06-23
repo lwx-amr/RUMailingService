@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const MailingSchema = mongoose.Schema({
-    HRName:{
+    hrName:{
         type:String,
         required: true
     },
@@ -11,6 +11,10 @@ const MailingSchema = mongoose.Schema({
     },
     wsID: {
         type: Number,
+        required: true
+    },
+    receiver: {
+        type: String,
         required: true
     },
     title:{
