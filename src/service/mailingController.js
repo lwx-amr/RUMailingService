@@ -5,7 +5,6 @@ import mailingModel from "../repository/mailingModel";
 
 const user =  config.get("cred.user")
 const pass  = config.get("cred.pass");
-      
 // Adjust transporter
 const transporter = nodemailer.createTransport({
     service: "yahoo",
@@ -18,17 +17,22 @@ const transporter = nodemailer.createTransport({
 
 // Display HR all jobs from recent to old
 const sendMail = (req, res) => {
-    const mailingRequest = mailingModel(req.body);
+    console.log(req.body);
     const mailOptions = {
         from: "rankup9822@yahoo.com",
-        to: mailingRequest.receiver,
-        subject: mailingRequest.title + ' job',
-        text: mailingRequest.message
+        to: req.body.receiver,
+        subject: req.body.title,
+        text: req.body.message
     };
     transporter.sendMail(mailOptions)
-        .then(() => mailingRequest.save())
-        .then(data => res.json(data))
-        .catch((err) => res.status(400).send(err));
+        .then(data => {
+            console.log(data)
+            res.json(data);
+        })
+        .catch(err => {
+            console.log(err)
+            res.send(err)
+        })
 }
 
 
