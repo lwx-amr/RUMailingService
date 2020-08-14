@@ -2,9 +2,9 @@
 require('dotenv').config();
 module.exports = {
     app: {
-        name: "APIGatewayService",
+        name: "MailingService",
         baseUrl: `http://localhost:`,
-        port: process.env.PORT || 3010
+        port: process.env.PORT || 3006
     },
     client: {
         url: process.env.CLIENT || 'http://localhost:3000'
@@ -12,5 +12,12 @@ module.exports = {
     api: {
         prefix: '^/api/v[1-9]',
         version: [1],
+    },
+    database: {
+        url: process.env.DB_URL || "mongodb+srv://rankup:rank1998@cluster0-9enme.mongodb.net/RUMails?retryWrites=true&w=majority",
+    }, 
+    cred : {
+        user: 'rankup9822@yahoo.com',
+        pass: 'mpvyeqpdvqlmwncq'
     }
 };
