@@ -57,3 +57,5 @@ typings/
 
 # SQLite3
 *.sqlite
+
+config/
